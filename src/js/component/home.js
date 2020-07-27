@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Form } from "./form.js";
 import { List } from "./list.js";
+import { Footer } from "./footer.js";
 
 //create your first component
 export function Home() {
@@ -12,6 +13,7 @@ export function Home() {
 				<h1>todos</h1>
 				<Form todos={task} setTodos={setTask} />
 				<List todos={task} setTodos={setTask} />
+				<Footer todos={task} setTodos={setTask} />
 			</div>
 		</div>
 	);
