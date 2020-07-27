@@ -10,7 +10,7 @@ export function Home() {
 	return (
 		<div className="container d-flex justify-content-center">
 			<div>
-				<h1>todos</h1>
+				<h1 className="text-muted">todos</h1>
 				<Form todos={task} setTodos={setTask} />
 				<List todos={task} setTodos={setTask} />
 				<Footer todos={task} setTodos={setTask} />
