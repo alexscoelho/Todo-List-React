@@ -18,7 +18,7 @@ export function List(props) {
 							onClick={() => handleRemove(index)}
 						/>
 					</span>
-					{item}
+					{item.label}
 				</li>
 			))}
 		</ul>

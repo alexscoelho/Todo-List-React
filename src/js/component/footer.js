@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 //create your first component
 export function Footer(props) {
-	const { setTodos, todos } = props;
+	const { todos } = props;
 	// const [task, setTask] = useState(todos.length);
 
 	// const handleSubmit = e => {
@@ -25,6 +25,5 @@ export function Footer(props) {
 	);
 }
 Footer.propTypes = {
-	setTodos: PropTypes.func,
 	todos: PropTypes.array
 };
