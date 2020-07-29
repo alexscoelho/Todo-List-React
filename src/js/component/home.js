@@ -6,6 +6,8 @@ import { Footer } from "./footer.js";
 
 //create your first component
 export function Home() {
+	// Get Data
+
 	const [task, setTask] = useState([]);
 	let baseUrl = "https://assets.breatheco.de/apis/fake/todos";
 	const getData = () =>
@@ -26,7 +28,32 @@ export function Home() {
 			});
 	useEffect(() => {
 		getData();
-	}, []);
+	}, task);
+
+	// Post Data
+	// const postData = () =>
+	fetch(baseUrl + "/user/alexc", {
+		method: "PUT",
+		body: JSON.stringify(),
+		headers: {
+			"Content-Type": "application/json"
+		}
+	})
+		.then(resp => {
+			console.log(resp.ok);
+			console.log(resp.status);
+			console.log(resp.text());
+			return resp.json();
+		})
+		.then(data => {
+			console.log(data);
+		})
+		.catch(error => {
+			console.log(error);
+		});
+	// useEffect(() => {
+	// 	postData();
+	// });
 	return (
 		<div className="container d-flex justify-content-center">
 			<div>
