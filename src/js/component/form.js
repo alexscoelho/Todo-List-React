@@ -6,6 +6,7 @@ export function Form(props) {
 	// const todoObj = { label: task, done: false };
 	const { setTodos, todos } = props;
 	const [task, setTask] = useState("");
+
 	const handleSubmit = e => {
 		e.preventDefault();
 		setTodos(todos.concat({ label: task, done: false }));
@@ -35,9 +36,13 @@ export function Form(props) {
 			.catch(error => {
 				console.log(error);
 			});
-	useEffect(() => {
-		postData();
-	});
+	useEffect(
+		() => {
+			postData();
+		},
+		[todos]
+	);
+
 	return (
 		<form onSubmit={handleSubmit}>
 			<input

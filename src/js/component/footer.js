@@ -14,6 +14,26 @@ export function Footer(props) {
 			// }
 		});
 	};
+	const handleClick2 = () => {
+		console.log(todos);
+		fetch(baseUrl + "/user/gerardine", {
+			method: "POST",
+			body: JSON.stringify([]),
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+			.then(resp => {
+				console.log("resp:", resp.ok);
+				console.log("status:", resp.status);
+			})
+			.then(data => {
+				console.log("succses:", data);
+			})
+			.catch(error => {
+				console.log(error);
+			});
+	};
 	// Delete all tasks
 	// const postData = () =>
 	// fetch(baseUrl + "/user/alexc", {
@@ -49,6 +69,9 @@ export function Footer(props) {
 			{todos.length} Items left{" "}
 			<button onClick={handleClick} className="btn btn-dark btn-sm">
 				Clean all
+			</button>
+			<button onClick={handleClick2} className="btn btn-dark btn-sm">
+				New list
 			</button>
 		</div>
 		// <form onSubmit={handleSubmit}>
