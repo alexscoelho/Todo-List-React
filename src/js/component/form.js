@@ -14,9 +14,9 @@ export function Form(props) {
 	};
 	// Post Data
 	let baseUrl = "https://assets.breatheco.de/apis/fake/todos";
-	console.log("result", todos);
+	// console.log("result", todos);
 	const postData = () =>
-		fetch(baseUrl + "/user/alexc", {
+		fetch(baseUrl + "/user/gerardine", {
 			method: "PUT",
 			body: JSON.stringify(todos),
 			headers: {
@@ -24,8 +24,8 @@ export function Form(props) {
 			}
 		})
 			.then(resp => {
-				console.log(resp.ok);
-				console.log(resp.status);
+				console.log("resp:", resp.ok);
+				console.log("status:", resp.status);
 				// console.log(resp.text());
 				// return resp.json();
 			})

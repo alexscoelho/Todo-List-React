@@ -11,7 +11,7 @@ export function Home() {
 	const [task, setTask] = useState([]);
 	let baseUrl = "https://assets.breatheco.de/apis/fake/todos";
 	const getData = () =>
-		fetch(baseUrl + "/user/alexc")
+		fetch(baseUrl + "/user/gerardine")
 			.then(function(response) {
 				if (!response.ok) {
 					throw Error(response.statusText);
